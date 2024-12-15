@@ -8,20 +8,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Bolsa de empleo</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/view/aplicaciones/aplicar_Bacante.php">Bolsa de empleo</a></li>
             <?php if (isset($_SESSION['usuario'])): ?>
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownNoticia" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Noticia</a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdownNoticia" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Noticias</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownNoticia">
                     <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/noticias/admin_Noticias.php">Administrar Noticias</a></li>
-                    <li><a class="dropdown-item" href="#">Noticias Creadas</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/noticias/noticias.php">Noticias Creadas</a></li>
                 </ul>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownEmpleo" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bolsa de Empleo</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownEmpleo">
-                    <li><a class="dropdown-item" href="#">Crear Empleo</a></li>
-                    <li><a class="dropdown-item" href="#">Mostrar Vacantes</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/empleos/admin_Empleos.php">Crear Empleo</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/aplicaciones/admin_Aplicaciones.php">Mostrar Vacantes</a></li>
                 </ul>
                 </li>
                 <li class="nav-item dropdown">
