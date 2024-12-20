@@ -37,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssssi", $foto, $titulo, $descripcion, $fecha, $id);
 
         if ($stmt->execute()) {
-            header("Location: ../../view/noticias/admin_noticias.php?mensaje=Noticia actualizada exitosamente");
+            header("Location: ../../view/noticias/admin_noticias.php?mensaje=Operación realizada con éxito");
+            exit();
         } else {
             echo "Error: " . $stmt->error;
         }

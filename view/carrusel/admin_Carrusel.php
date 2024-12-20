@@ -1,9 +1,9 @@
 <?php 
     session_start();
     include_once(__DIR__ .'../../../config/config.php');
-    require_once '../../models/aplicaciones/mostrar_aplicaciones.php';
+    require_once __DIR__ . '/../../models/carrusel/mostrar_carrusel.php';
 
-    $tablaAplicaciones = new TablaAplicaciones(); 
+    $tablaCarrusel = new TablaCarrusel();  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>admin Bacantes</title>
+        <title>admin Carrusel</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?> /assets/img/logocimo.ico" />
         <!-- Bootstrap icons-->
@@ -32,16 +32,7 @@
             <!-- Blog preview section-->
             <section class="py-5">
                 <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <div class="text-center">
-                                <h2 class="fw-bolder">Administración de Bacantes</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container mt-5">
-                        <?php $tablaAplicaciones->mostrarTablaAplicaciones(); ?>
-                    </div>
+                <?php $tablaCarrusel->mostrarTablaCarrusel(); ?>
                 </div>
             </section>
         </main>
@@ -57,12 +48,21 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script>
+         // Script para pasar datos al modal de edición
+            $('#editarModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                var imagen = button.data('imagen');
+                var modal = $(this);
+                modal.find('#editar-id').val(id);
+            });
+
             // Script para pasar datos al modal de eliminación
             $('#eliminarModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
                 var id = button.data('id');
                 var modal = $(this);
-                modal.find('#eliminarId').val(id);
+                modal.find('#eliminar-id').val(id);
             });
         </script>
         <!-- Script para mostrar el modal si hay un mensaje de éxito y eliminar el parámetro de la URL -->

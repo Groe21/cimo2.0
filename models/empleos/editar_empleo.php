@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("sssssi", $puesto, $ubicacion, $descripcion, $requisitos, $fecha_publicacion, $id);
 
         if ($stmt->execute()) {
-            header("Location: ../../view/empleos/admin_empleos.php?mensaje=Empleo actualizado exitosamente");
+            header("Location: ../../view/empleos/admin_empleos.php?mensaje=Operación realizada con éxito");
         } else {
             echo "Error: " . $stmt->error;
         }

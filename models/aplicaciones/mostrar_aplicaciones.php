@@ -108,9 +108,7 @@ class TablaAplicaciones {
                 echo '<div class="col mb-5 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
                         <h2 class="h5">' . htmlspecialchars($empleo['Puesto']) . '</h2>
-                        <p class="mb-0">' . htmlspecialchars(substr($empleo['descripcion'], 0, 100)) . '... <a href="' . BASE_URL . '/view/aplicaciones/aplicar_bacante.php" data-bs-toggle="modal" data-bs-target="#aplicarModal"
-                                        data-id="' . $empleo['id'] . '"
-                                        data-puesto="' . htmlspecialchars($empleo['Puesto']) . '">Ver más</a></p>
+                        <p class="mb-0">' . htmlspecialchars(substr($empleo['descripcion'], 0, 100)) . '... <a href="' . BASE_URL . '/view/aplicaciones/aplicar_bacante.php?id=' . $empleo['id'] . '&puesto=' . urlencode($empleo['Puesto']) . '">Ver más</a></p>
                       </div>';
             }
         }

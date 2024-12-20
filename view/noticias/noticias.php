@@ -56,30 +56,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script>
-        // Script para pasar datos al modal de edición
-        $('#editarModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var id = button.data('id');
-            var foto = button.data('foto');
-            var titulo = button.data('titulo');
-            var descripcion = button.data('descripcion');
-            var fecha = button.data('fecha');
-            var modal = $(this);
-            modal.find('#editarId').val(id);
-            modal.find('#foto_actual').val(foto);
-            modal.find('#editarTitulo').val(titulo);
-            modal.find('#editarDescripcion').val(descripcion);
-            modal.find('#editarFecha').val(fecha);
-        });
-
-        // Script para pasar datos al modal de eliminación
-        $('#eliminarModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var id = button.data('id');
-            var modal = $(this);
-            modal.find('#eliminarId').val(id);
-        });
-    </script>
     </body>
 </html>

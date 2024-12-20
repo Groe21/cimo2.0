@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownCarrusel" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Carrusel</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownCarrusel">
-                    <li><a class="dropdown-item" href="#">Imágenes Carrusel</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/carrusel/admin_Carrusel.php">Imágenes Carrusel</a></li>
                 </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/models/usuario/logout.php">Cerrar Sesión</a></li>

@@ -79,5 +79,20 @@
                 modal.find('#eliminarId').val(id);
             });
         </script>
+       <!-- Script para mostrar el modal si hay un mensaje de éxito y eliminar el parámetro de la URL -->
+        <script>
+            $(document).ready(function() {
+                var urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('mensaje')) {
+                    var mensaje = urlParams.get('mensaje');
+                    if (mensaje === 'Operación realizada con éxito' || mensaje === 'Usuario creado exitosamente') {
+                        $('#exitoModal').modal('show');
+                        // Eliminar el parámetro de la URL
+                        var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                        window.history.replaceState({path: newUrl}, '', newUrl);
+                    }
+                }
+            });
+        </script>
     </body>
 </html>

@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssssi", $nombre, $apellido, $correo, $password, $id);
 
         if ($stmt->execute()) {
-            header("Location: ../../view/usuarios/admin_Usuarios.php?mensaje=Usuario actualizado exitosamente");
+            header("Location: ../../view/usuarios/admin_Usuarios.php?mensaje=Operación realizada con éxito");
+            exit();
         } else {
             echo "Error: " . $stmt->error;
         }

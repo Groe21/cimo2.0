@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $nombre, $apellido, $correo, $password);
 
     if ($stmt->execute()) {
-        header("Location: ../../view/usuarios/admin_Usuarios.php?mensaje=Usuario creado exitosamente");
+        header("Location: ../../view/usuarios/admin_Usuarios.php?mensaje=Operación realizada con éxito");
+        exit();
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -2,8 +2,11 @@
     session_start();
     include_once(__DIR__ .'/config/config.php');
     include_once(__DIR__ .'/config/conexion.php');
+    require_once __DIR__ .'/models/carrusel/mostrar_carrusel.php';
     require_once 'models/aplicaciones/mostrar_aplicaciones.php';
+    
 
+    $tablaCarrusel = new TablaCarrusel();
     $tablaAplicaciones = new TablaAplicaciones();
     require_once 'models/noticias/mostrar_noticias.php';
 

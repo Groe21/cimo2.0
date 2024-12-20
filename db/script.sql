@@ -13,7 +13,7 @@ CREATE TABLE usuarios (
 -- Datos iniciales para la tabla "usuarios"
 --
 INSERT INTO usuarios (nombre, apellido, password, correo) 
-VALUES ('Emilio', 'Guerrero', '12345', 'guerreroemilio001@gmail.com');
+VALUES ('Administrador', 'Administrador', 'admin123', 'guerreroemilio001@gmail.com');
 
 --
 -- Estructura de la tabla "noticias"
@@ -53,3 +53,13 @@ CREATE TABLE `aplicar_empleo` (
   `fecha_aplicacion` DATE NOT NULL,
   FOREIGN KEY (`empleo_id`) REFERENCES `empleos`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Estructura de la tabla "carrusel"
+--
+
+CREATE TABLE carrusel (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  imagen VARCHAR(255) NOT NULL,
+  activo BOOLEAN DEFAULT FALSE
+);

@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Manejar la subida del CV
         $target_dir = "../../uploads/cv/";
         $target_file = $target_dir . basename($_FILES["cv"]["name"]);
-        $cv_url = "uploads/cv/" . basename($_FILES["cv"]["name"]);
+        $cv_url = "../../uploads/cv/" . basename($_FILES["cv"]["name"]);
 
         if (move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file)) {
             $fecha_aplicacion = date('Y-m-d');
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("isssss", $empleo_id, $nombre_candidato, $email, $telefono, $cv_url, $fecha_aplicacion);
 
             if ($stmt->execute()) {
-                header("Location: ../../view/aplicaciones/aplicar_bacante.php?mensaje=Aplicación enviada exitosamente");
+                header("Location: ../../view/aplicaciones/aplicar_bacante.php?mensaje=Operación realizada con éxito");
             } else {
                 echo "Error: " . $stmt->error;
             }

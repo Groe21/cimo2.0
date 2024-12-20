@@ -19,13 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['usuario'] = $user['nombre'];
             header("Location: ../../index.php");
         } else {
-            header("Location: ../../login.php?error=Usuario o contraseña incorrectos");
+
+            header("Location: ../../login.php?error=Credenciales incorrectas, vuelva a intentarlo");
+            exit();
         }
 
         $stmt->close();
         $conexion->conexion->close();
     } else {
-        header("Location: ../../login.php?error=Todos los campos son obligatorios");
+        // header("Location: ../../login.php?error=Todos los campos son obligatorios");
     }
 }
 ?>
